@@ -3,6 +3,7 @@
 ## Packages Needed
 
 - [Redux Stack for React and TypeScript](https://react-redux.js.org/introduction/getting-started)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Redux Toolkit](https://react-redux.js.org/introduction/getting-started)
 - [Axios](https://axios-http.com/docs/intro)
 
