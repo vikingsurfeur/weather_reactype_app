@@ -1,10 +1,15 @@
-/* Import TypeScript definitions */
-import { FC } from "hoist-non-react-statics/node_modules/@types/react";
+//*Import Redux Stack */
+import store from "./store/store";
+import { Provider } from "react-redux";
 
-const App: FC = () => {
+/* import components */
+import DataDisplay from "./component/DataDisplay";
+
+const App: React.FC = () => {
   return (
-    <>
-    </>
+    <Provider store={store}>
+      
+    </Provider>
   );
 }
 
