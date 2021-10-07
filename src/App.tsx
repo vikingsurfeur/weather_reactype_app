@@ -1,15 +1,11 @@
-//*Import Redux Stack */
-import store from "./store/store";
-import { Provider } from "react-redux";
+/* Import React Types */
+import { FC } from 'react';
 
-/* import components */
-import DataDisplay from "./component/DataDisplay";
-
-const App: React.FC = () => {
+const App: FC = () => {
   return (
-    <Provider store={store}>
+    <div className="App">
       
-    </Provider>
+    </div>
   );
 }
 
