@@ -1,13 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+/* Import React Components */
+import React from "react";
+import ReactDOM from "react-dom";
+
+/* Import Redux Stack */
+import { Provider } from "react-redux";
+
+/* Import Component */
+import App from "./App";
+
+/* Import Store */
+import store from "./redux/store";
+
+/* Import ReportWebVitals for Google Analytics */
+import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </React.StrictMode>,
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
