@@ -1,6 +1,6 @@
 /* Import Axios */
 
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
 /* Define API URL */
 
@@ -11,7 +11,7 @@ const {
 
 /* Create an Instance of Axios */
 
-const handleApiFetchDataWeather = axios.create({
+const handleApiFetchDataWeather: AxiosInstance = axios.create({
     baseURL: `${REACT_APP_API_URL_BASE}/${REACT_APP_API_URL_VERSION}`,
     timeout: 5000,
     headers: {
