@@ -12,7 +12,7 @@ import {
 
 /* Import Geolocalisation Function */
 
-import getGeolocalisation from "../../utils/getGeoLocalisation";
+import getGeoLocation from "../../utils/getGeoLocation";
 
 /* Define API URL */
 
@@ -24,7 +24,7 @@ const fetchDataWeather = () => {
     return async (dispatch: Dispatch<Action>) => {
         try {
             dispatch(fetchDataWeatherRequest());
-            const { latitude, longitude } = await getGeolocalisation();
+            const { latitude, longitude } = await getGeoLocation();
 
             const response = await handleApiFetchDataWeather.get(
                 `onecall?lat=${latitude}&lon=${longitude}&${REACT_APP_API_URL_OPTIONS}&appid=${REACT_APP_API_URL_KEY}`

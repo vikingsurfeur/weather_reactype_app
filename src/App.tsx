@@ -8,29 +8,28 @@ import fetchDataWeather from "./redux/dataWeather/dataWeatherSelectors";
 import { FC, useEffect } from "react";
 
 /* Import Interfaces Values */
-import { IInitialStateDataWeather } from "./interfaces/interfaceDataWeather";
+import { IDataWeather } from "./interfaces/interfaceDataWeather";
 
 /* App Component */
 
 const App: FC<{
-    dataWeather: IInitialStateDataWeather["data"];
+    dataWeather: IDataWeather;
     fetchDataWeather: Function;
 }> = ({ dataWeather, fetchDataWeather }) => {
     useEffect(() => {
         fetchDataWeather();
     }, [fetchDataWeather]);
 
-    console.log(dataWeather);
     return (
         <div className="App">
-            <h1>Hello World</h1>
+
         </div>
     );
 };
 
 const mapStateToProps = (state: any) => {
     return {
-        dataWeather: state.dataWeather,
+        dataWeather: state.dataWeather.data,
     };
 };
 

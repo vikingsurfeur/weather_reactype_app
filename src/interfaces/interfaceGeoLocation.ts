@@ -1,6 +1,6 @@
 /* Interface for Geolocalisation */
 
-export interface IGeolocalisation {
+export interface IGeoLocation {
     latitude: number;
     longitude: number;
 }

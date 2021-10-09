@@ -1,12 +1,12 @@
-/* Get Geolocalisation */
+/* Get Geolocation */
 
 /* Import Interface Values */
 
-import { IGeolocalisation } from "../interfaces/interfaceGeolocalisation";
+import { IGeoLocation } from "../interfaces/interfaceGeoLocation";
 
 /* Get Current Location By Navigator Object */
 
-const getGeolocalisation: Function = (): Promise<GeolocationPosition> => {
+const getGeoLocation: Function = (): Promise<GeolocationPosition> => {
     return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
     });
@@ -15,9 +15,9 @@ const getGeolocalisation: Function = (): Promise<GeolocationPosition> => {
 /* Define the Latitude and Longitude */
 
 const getLatitudeAndLongitude: Function =
-    async (): Promise<IGeolocalisation | void> => {
+    async (): Promise<IGeoLocation | void> => {
         try {
-            const currentPosition = await getGeolocalisation();
+            const currentPosition = await getGeoLocation();
             return {
                 latitude: currentPosition.coords.latitude,
                 longitude: currentPosition.coords.longitude,
