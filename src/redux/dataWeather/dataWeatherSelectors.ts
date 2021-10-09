@@ -20,7 +20,7 @@ const { REACT_APP_API_URL_OPTIONS, REACT_APP_API_URL_KEY } = process.env;
 
 /* Data Weather Selectors */
 
-const fetchDataWeather = () => {
+const fetchDataWeather: Function = () => {
     return async (dispatch: Dispatch<Action>) => {
         try {
             dispatch(fetchDataWeatherRequest());
