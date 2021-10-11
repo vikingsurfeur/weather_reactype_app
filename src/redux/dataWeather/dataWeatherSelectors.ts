@@ -21,10 +21,13 @@ const { REACT_APP_API_URL_OPTIONS, REACT_APP_API_URL_KEY } = process.env;
 /* Data Weather Selectors */
 
 const fetchDataWeather: Function = () => {
-    return async (dispatch: Dispatch<Action>) => {
+    return async (dispatch: Dispatch<Action>): Promise<void> => {
         try {
             dispatch(fetchDataWeatherRequest());
-            const { latitude, longitude } = await getGeoLocation();
+            const {
+                latitude,
+                longitude,
+            }: { latitude: number; longitude: number } = await getGeoLocation();
 
             const response = await handleApiFetchDataWeather.get(
                 `onecall?lat=${latitude}&lon=${longitude}&${REACT_APP_API_URL_OPTIONS}&appid=${REACT_APP_API_URL_KEY}`

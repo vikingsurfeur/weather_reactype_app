@@ -1,6 +1,7 @@
 /* Import Redux Stack */
 
 import { connect } from "react-redux";
+import { ThunkDispatch } from "redux-thunk";
 import fetchDataWeather from "./redux/dataWeather/dataWeatherSelectors";
 
 /* Import React Components */
@@ -20,6 +21,8 @@ const App: FC<{
         fetchDataWeather();
     }, [fetchDataWeather]);
 
+    console.log(dataWeather);
+
     return (
         <div className="App">
 
@@ -33,7 +36,7 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<IDataWeather, Function, any>) => {
     return {
         fetchDataWeather: () => dispatch(fetchDataWeather()),
     };
